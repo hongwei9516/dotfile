@@ -1,0 +1,120 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+" ===============================================================================
+set ignorecase
+set hlsearch
+set keep-english-in-normal
+
+let mapleader = " "
+
+imap jk <Esc>
+vmap q <Esc>
+
+nmap L <action>(NextTab)
+nmap H <action>(PreviousTab)
+
+nmap <leader>le :e ~/.config/ideavim/ideavimrc<CR>
+nmap <leader>lr <action>(IdeaVim.ReloadVimRc.reload)
+
+" Save and quit
+nmap <leader>w <action>(SaveAll)
+nmap <leader>q <action>(CloseContent)
+
+" Run and debug
+nmap <leader>dr <action>(RunClass)
+nmap <leader>ds <action>(Debug)
+nmap <leader>dd <action>(Stop)
+nmap <leader>dt <action>(ToggleLineBreakpoint)
+
+" File tree
+nmap <leader>e <action>(ActivateProjectToolWindow)
+
+" Reformat Code
+nmap <leader>lf <action>(ReformatCode)
+
+" Nohlsearch
+nmap <leader>h :nohlsearch<CR>
+
+" go impl
+nmap gi <action>(GotoImplementation)
+" method up
+nmap gp <action>(MethodUp)
+" method down
+nmap gn <action>(MethodDown)
+" go next error
+nmap ge <action>(GotoNextError)
+" go test
+nmap gt <action>(GotoTest)
+
+" e: Extract
+" extract method/function
+vmap <leader>em <action>(ExtractMethod)
+" extract constant
+vmap <leader>ec <action>(IntroduceConstant)
+" extract field
+vmap <leader>ef <action>(IntroduceField)
+" extract variable
+vmap <leader>ev <action>(IntroduceVariable)
+
+" bookmark
+nmap bt <action>(ToggleBookmark)
+
+" close
+nmap <leader>ca <action>(CloseAllEditors)
+nmap <leader>co <action>(CloseAllEditorsButActive)
+nmap <leader>cc <action>(CloseContent)
+
+" search
+nmap <leader>sa <action>(GotoAction)
+nmap <leader>sr <action>(RecentFiles)
+nmap <leader>sf <action>(GotoFile)
+nmap <leader>st <action>(FindInPath)
+
+" git
+nmap <leader>gr <action>(Vcs.RollbackChangedLines)
+nmap <leader>gd <action>(Vcs.ShowTabbedFileHistory)
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" zip
+nmap <leader>zo <action>(ExpandAllRegions)
+nmap <leader>zc <action>(CollapseAllRegions)
+
+" size
+nmap <leader>li <action>(EditorIncreaseFontSizeGlobal)
+nmap <leader>ld <action>(EditorDecreaseFontSizeGlobal)
+nmap <leader>ls <action>(EditorResetFontSizeGlobal)
+
+" ===============================================================================
+Plug 'preservim/nerdtree'
+" nnoremap <leader>e :NERDTreeToggle<CR>
+nmap <leader>e <action>(ActivateProjectToolWindow)
+
+Plug 'easymotion/vim-easymotion'
+set easymotion
+nmap <leader>f <Plug>(easymotion-bd-n)

@@ -1,0 +1,32 @@
+# 主题
+theme = Dracula+
+
+# 字体
+font-family = Liga SFMono Nerd Font
+font-size = 16
+font-style = Medium
+
+# 透明度
+background-opacity = 0.8
+# background-blur-radius = 10
+
+# 指针
+cursor-style = block
+
+# 窗口
+window-padding-balance = true
+
+# mac
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+
+confirm-close-surface = false
+
+quick-terminal-position = bottom
+
+# 快捷键
+keybind = global:cmd+backslash=toggle_quick_terminal
+keybind = super+shift+u=scroll_page_up
+keybind = super+shift+d=scroll_page_down
+
+shell-integration-features = sudo
