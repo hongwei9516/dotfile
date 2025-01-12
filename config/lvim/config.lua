@@ -19,7 +19,7 @@ lvim.lsp.installer.setup.automatic_installation = false
 -- set neovim transparent
 -- lvim.transparent_window = true
 
-lvim.colorscheme = 'kanagawa-lotus'
+lvim.colorscheme = 'kanagawa-dragon'
 
 -- ==================================== other =====================================
 -- lemminx cache location

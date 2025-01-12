@@ -8,28 +8,22 @@ setopt hist_find_no_dups
 setopt hist_expire_dups_first
 
 # ============================================= zinit =============================================
-# Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
    mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-# Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit load wfxr/forgit
 
-# Load completions
 autoload -Uz compinit && compinit
 
-# Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
@@ -64,90 +58,55 @@ eval "$(starship init zsh)"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # ============================================= alias =============================================
-## proxy
 alias proxy='export all_proxy=http://127.0.0.1:1087'
 alias unproxy='unset all_proxy'
 
-## commonly use
 alias ll='ls -alG'
-## df
 alias df='df -h'
-## grep
 alias grep='grep --color=auto'
 
-## bat
+
 alias bat='bat --theme=Dracula'
-
-## fastfetch
 alias nf='fastfetch'
-## lazygit
-alias lg='lazygit'
-## 
-alias lzd='lazydocker'
-## ncdu
 alias ncdu='ncdu --color dark'
-## eza
 alias eza='eza -abghHliS --sort=Filename --icons'
+alias lg='lazygit'
+alias lzd='lazydocker'
+alias nvim='lvim'
 
-## edit .zshrc
+
 alias ez='nvim $ZDOTDIR/.zshrc'
-## source .zshrc
+
 alias sz='source $ZDOTDIR/.zshrc'
 
 # ============================================= common ============================================
-## homebrew
 export PATH=$(brew --prefix)/bin:$PATH
 
-## nvim
 export EDITOR=nvim
-## lunarvim
 export PATH=$HOME/.local/bin:$PATH
 
-## man
 export MANPAGER='nvim +Man!'
 
-## grep
-alias grep='grep --color=auto'
-## df
-alias df='df -h'
-
-## bat
-alias bat='bat --theme=Dracula'
-## fastfetch
-alias nf='fastfetch'
-## eza
-alias eza='eza -abghHliS --sort=Filename --icons'
-## lazygit
-alias lg='cd $(readlink -f .) && lazygit'
-## ncdu
-alias ncdu='ncdu --color dark'
-
-## less
 export LESSHISTFILE=-
 
-## node
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export NODE_OPTIONS='--trace-deprecation'
 
-## cargo
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$HOME/.local/share/cargo
 
-if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
-    export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
-else
-    export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/default.toml
-fi
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
+# if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
+#     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
+# else
+#     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/default.toml
+# fi
 
 # ============================================= fzf ===============================================
-## 补全触发字符
 export FZF_COMPLETION_TRIGGER='\'
 
 fl() {
   dir="$HOME/Documents/linux-command/command"
-  ## find command 目录下所有 .md 文件，sed "s#$dir/##; s/\.md//" 去掉目录和 .md 拓展名,然后交给fzf
-  ## fzf 打开搜索和预览窗口，通过 glow 预览 markdown 文件
-  ## 选中命令后用 awk 打开 
   commandsfile=$(find $dir -name '*.md' | sed "s#$dir/##; s/\.md//" \
       | fzf --prompt='LinuxCommands> ' --preview "echo $dir/{}.md | xargs -r mdcat -p" --preview-window=right,75% \
       | awk '{printf "'$dir'/%s.md", $1}')
@@ -158,13 +117,11 @@ fl() {
    fi
 }
 
-# tldr
 tl() {
     tldr --list | fzf --preview "tldr -R {1} | mdcat -p" --preview-window=right,60% | xargs tldr
 }
 
 # ============================================= yazi ==============================================
-## yazi
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
@@ -182,6 +139,5 @@ alias tls='tmux ls'
 alias tkill='tmux kill-session -t'
 
 # =========================================== (f)path =============================================
-## 去重
 typeset -aU path
 typeset -aU fpath
