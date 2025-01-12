@@ -7,6 +7,7 @@ format = """
 $directory\
 $git_branch\
 $git_status\
+$line_break\
 $character"""
 
 add_newline = false
@@ -34,12 +35,12 @@ conflicted = '='
 untracked = '?${count}'
 modified = '!${count}'
 staged = '+${count}'
-# ahead = '⇡${count}'
-# behind = '⇣${count}'
-# diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-# stashed = '$'
-# renamed = '»${count}'
-# deleted = '✘${count}'
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+stashed = '$'
+renamed = '»${count}'
+deleted = '✘${count}'
 format = '[$modified$staged$untracked$ahead_behind](green)\)'
 
 [character]

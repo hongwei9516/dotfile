@@ -95,12 +95,11 @@ export NODE_OPTIONS='--trace-deprecation'
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$HOME/.local/share/cargo
 
-export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
-# if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
-#     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
-# else
-#     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/default.toml
-# fi
+if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
+    export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
+else
+    export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/default.toml
+fi
 
 # ============================================= fzf ===============================================
 export FZF_COMPLETION_TRIGGER='\'

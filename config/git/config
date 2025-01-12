@@ -1,8 +1,8 @@
 [user]
 	name = hong
-	email = hongwei36@gmail.com
+	email = hongwei9516@gmail.com
 [core]
-    pager = delta
+  pager = delta
 	quotepath = false
 	editor = nvim
 [https "https://github.com"]
@@ -11,14 +11,11 @@
 	proxy = http://127.0.0.1:1087
 [interactive]
   diffFilter = delta --color-only
-
 [delta]
   line-numbers = true
   navigate = true    # use n and N to move between diff sections
-
 [merge]
   conflictstyle = diff3
-
 [diff]
   colorMoved = default
 [http]
