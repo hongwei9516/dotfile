@@ -35,3 +35,4 @@ config/karabiner/karabiner.json
 config/tmux/plugins
 config/zsh/.zcompcache
 config/gh
+config/fastRequest/compile

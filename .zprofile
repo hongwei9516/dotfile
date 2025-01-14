@@ -1,8 +1,10 @@
-export LANG="zh_CN.UTF-8"
-export LC_ALL="zh_CN.UTF-8"
-
 # homebrew
-eval "$(/usr/local/bin/brew shellenv)"
+get_arch=`arch`
+if [[ $get_arch =~ "arm64" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 # custom install
 # export HOMEBREW_NO_INSTALL_FROM_API=1
 
