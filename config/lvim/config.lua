@@ -21,6 +21,11 @@ lvim.lsp.installer.setup.automatic_installation = false
 
 lvim.colorscheme = 'kanagawa-dragon'
 
+lvim.builtin.telescope.defaults.layout_config = {
+  width = 0.5, -- 0.90,
+  height = 0.4,
+}
+
 -- ==================================== other =====================================
 -- lemminx cache location
 require('lspconfig').lemminx.setup({
