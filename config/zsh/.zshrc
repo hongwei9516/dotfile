@@ -63,8 +63,8 @@ eval "$(starship init zsh)"
 [ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # ============================================= alias =============================================
-alias proxy='export all_proxy=http://127.0.0.1:1087'
-alias unproxy='unset all_proxy'
+alias proxy='export all_proxy=http://127.0.0.1:1087 && curl cip.cc'
+alias unproxy='unset all_proxy && curl cip.cc'
 
 alias ll='ls -alG'
 alias df='df -h'
@@ -77,8 +77,6 @@ alias ncdu='ncdu --color dark'
 alias eza='eza -abghHliS --sort=Filename --icons'
 alias lg='lazygit'
 alias lzd='lazydocker'
-alias nvim='lvim'
-
 
 alias ez='nvim $ZDOTDIR/.zshrc'
 
@@ -97,6 +95,7 @@ export LESSHISTFILE=-
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export NODE_OPTIONS='--trace-deprecation'
 
+export PATH=$(brew --prefix)/opt/rustup/bin:$PATH
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$HOME/.local/share/cargo
 

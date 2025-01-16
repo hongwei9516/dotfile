@@ -209,12 +209,13 @@ down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
-# [[on-window-detected]]
-# if.app-id = 'com.mitchellh.ghostty'
-# run = [
-#   'layout tiling',
-#   'move-node-to-workspace 2'
-# ]
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = [
+  'layout tiling',
+  'move-node-to-workspace T'
+]
+
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
 run = [
