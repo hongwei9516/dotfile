@@ -14,7 +14,7 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- keymap ==> <space> + "
 lvim.builtin.which_key.setup.plugins.registers = true
-lvim.lsp.installer.setup.automatic_installation = false
+-- lvim.lsp.installer.setup.automatic_installation = false
 
 -- set neovim transparent
 -- lvim.transparent_window = true
@@ -40,7 +40,8 @@ require('lspconfig').lemminx.setup({
 
 -- ===================================== plu ======================================
 lvim.plugins = {
-  { "rebelot/kanagawa.nvim" }
+  { "rebelot/kanagawa.nvim" },
+  { "uga-rosa/translate" }
 }
 
 -- ===================================== bug ======================================
