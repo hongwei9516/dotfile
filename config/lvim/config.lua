@@ -40,10 +40,10 @@ require('lspconfig').lemminx.setup({
 
 -- ===================================== plu ======================================
 lvim.plugins = {
-  { "rebelot/kanagawa.nvim" },
-  { "uga-rosa/translate" }
+  { "rebelot/kanagawa.nvim" }
 }
 
 -- ===================================== bug ======================================
 -- nvimtree 修复打开文件对半分bug
 lvim.builtin.nvimtree.setup.actions.open_file.resize_window = true
+
