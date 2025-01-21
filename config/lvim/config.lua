@@ -14,12 +14,6 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- keymap ==> <space> + "
 lvim.builtin.which_key.setup.plugins.registers = true
--- lvim.lsp.installer.setup.automatic_installation = false
-
--- set neovim transparent
--- lvim.transparent_window = true
-
-lvim.colorscheme = 'kanagawa-dragon'
 
 lvim.builtin.telescope.defaults.layout_config = {
   width = 0.5, -- 0.90,
@@ -28,22 +22,32 @@ lvim.builtin.telescope.defaults.layout_config = {
 
 -- ==================================== other =====================================
 -- lemminx cache location
-require('lspconfig').lemminx.setup({
-  settings = {
-    xml = {
-      server = {
-        workDir = "~/.cache/lemminx",
-      }
-    }
-  }
-})
+-- require('lspconfig').lemminx.setup({
+--   settings = {
+--     xml = {
+--       server = {
+--         workDir = "~/.cache/lemminx",
+--       }
+--     }
+--   }
+-- })
 
 -- ===================================== plu ======================================
 lvim.plugins = {
-  { "rebelot/kanagawa.nvim" },
-  { "uga-rosa/translate" }
+  { "rebelot/kanagawa.nvim" }
 }
+-- Default options:
+require('kanagawa').setup({
+    theme = "dragon",              -- Load "wave" theme when 'background' option is not set
+    background = {                 -- map the value of 'background' option to a theme
+        dark = "dragon",           -- try "dragon" !
+        light = "dragon"
+    },
+})
+-- setup must be called before loading
+lvim.colorscheme = 'kanagawa-dragon'
 
 -- ===================================== bug ======================================
 -- nvimtree 修复打开文件对半分bug
 lvim.builtin.nvimtree.setup.actions.open_file.resize_window = true
+
