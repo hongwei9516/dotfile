@@ -96,6 +96,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export NODE_OPTIONS='--trace-deprecation'
 
 export PATH=$(brew --prefix)/opt/rustup/bin:$PATH
+export PATH=$HOME/.local/share/cargo/bin:$PATH
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$HOME/.local/share/cargo
 

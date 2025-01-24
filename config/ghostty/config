@@ -3,7 +3,7 @@ theme = Dracula+
 
 # 字体
 font-family = Liga SFMono Nerd Font
-font-size = 16
+font-size = 15
 font-style = Medium
 
 # 透明度
