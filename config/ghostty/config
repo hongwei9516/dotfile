@@ -16,10 +16,12 @@ cursor-style = block
 # 窗口
 window-padding-balance = true
 
+# shaders
+# custom-shader = space-lines.glsl
+
 # mac
 macos-option-as-alt = true
 macos-titlebar-style = hidden
-
 confirm-close-surface = false
 
 quick-terminal-position = bottom

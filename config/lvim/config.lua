@@ -34,7 +34,13 @@ lvim.builtin.telescope.defaults.layout_config = {
 
 -- ===================================== plu ======================================
 lvim.plugins = {
-  { "rebelot/kanagawa.nvim" }
+  { "rebelot/kanagawa.nvim" },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  }
 }
 -- Default options:
 require('kanagawa').setup({
