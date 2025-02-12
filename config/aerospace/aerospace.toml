@@ -223,6 +223,12 @@ run = [
 # ]
 
 [[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+run = [
+  'move-node-to-workspace V'
+]
+
+[[on-window-detected]]
 if.app-id = 'com.tencent.WeWorkMac'
 run = [
   'move-node-to-workspace W'

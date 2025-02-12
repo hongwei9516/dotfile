@@ -78,7 +78,7 @@ alias eza='eza -abghHliS --sort=Filename --icons'
 alias lg='lazygit'
 alias lzd='lazydocker'
 
-alias ez='nvim $ZDOTDIR/.zshrc'
+alias ez='lvim $ZDOTDIR/.zshrc'
 
 alias sz='source $ZDOTDIR/.zshrc'
 
@@ -100,11 +100,14 @@ export PATH=$HOME/.local/share/cargo/bin:$PATH
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$HOME/.local/share/cargo
 
-if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
-    export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
-else
-    export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/default.toml
-fi
+export KETTLE=$HOME/.config/kettle
+
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
+# if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
+#     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/hong.toml
+# else
+#     export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/default.toml
+# fi
 
 # ============================================= fzf ===============================================
 export FZF_COMPLETION_TRIGGER='\'
