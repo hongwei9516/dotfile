@@ -37,3 +37,4 @@ config/zsh/.zcompcache
 config/gh
 config/fastRequest/compile
 config/lvim/lazy-lock.json
+config/nvim/lazy-lock.json

@@ -215,11 +215,17 @@ run = [
   'move-node-to-workspace B'
 ]
 
+# [[on-window-detected]]
+# if.app-id = 'com.mitchellh.ghostty'
+# run = [
+#   'layout tiling',
+#   'move-node-to-workspace T'
+# ]
+
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if.app-id = 'com.tencent.xinWeChat'
 run = [
-  'layout tiling',
-  'move-node-to-workspace T'
+  'move-node-to-workspace V'
 ]
 
 [[on-window-detected]]
