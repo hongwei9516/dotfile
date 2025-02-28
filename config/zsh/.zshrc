@@ -78,9 +78,12 @@ alias eza='eza -abghHliS --sort=Filename --icons'
 alias lg='lazygit'
 alias lzd='lazydocker'
 
-alias ez='lvim $ZDOTDIR/.zshrc'
+alias ez='nvim $ZDOTDIR/.zshrc'
 
 alias sz='source $ZDOTDIR/.zshrc'
+
+alias python3='/usr/bin/python3'
+alias pip='/usr/bin/python3 -m pip'
 
 # ============================================= common ============================================
 export PATH=$(brew --prefix)/bin:$PATH
@@ -122,10 +125,6 @@ fl() {
    else
      echo >> /dev/null
    fi
-}
-
-tl() {
-    tldr --list | fzf --preview "tldr -R {1} | mdcat -p" --preview-window=right,60% | xargs tldr
 }
 
 # ============================================= yazi ==============================================

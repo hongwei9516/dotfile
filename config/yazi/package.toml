@@ -1,37 +1,37 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "600614a"
-hash = "882ed23839778f82dc137248979c8681"
+rev = "5186af7"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "600614a"
-hash = "c1a2739e9ef2d837030ccb4267be3ed1"
+rev = "5186af7"
+hash = "aef2b1a805b80cce573bb766f1459d88"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:max-preview"
-rev = "600614a"
-hash = "9bc26d10d2f6e2aa93b10905b1b76979"
+rev = "5186af7"
+hash = "a8025f2bb311e869069364fba01abffc"
 
 [[plugin.deps]]
 use = "Reledia/glow"
-rev = "5ce76dc"
-hash = "52e5f5c602962e7cbf874da28f52ba45"
+rev = "c76bf4f"
+hash = "a6b78bf9af5390e3a85a6951fbb7b93"
 
 [[plugin.deps]]
 use = "Reledia/hexyl"
-rev = "39d3d4e"
-hash = "dd624cbaff94af65f39fd86bc57b340"
+rev = "228a9ef"
+hash = "cdc65cfe4e60e1bf5afe5769d074fa9c"
 
 [[plugin.deps]]
 use = "Sonico98/exifaudio"
-rev = "d794614"
+rev = "4379fcf"
 hash = "a8e15d3c21c02a5af41d46ed04778a02"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "ddfd5ec"
-hash = "30f1eb92543be9624503cb79d03dbd19"
+rev = "f565c5a"
+hash = "15d0dbb4e9ba84eb1f2dbb8e9e249bf6"
 
 [flavor]
 deps = []
