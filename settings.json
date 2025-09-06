@@ -170,8 +170,6 @@
                 "workbench.action.files.save"
             ]
         }
-    ],
-    "workbench.startupEditor": "none",
-    "security.workspace.trust.untrustedFiles": "open",
-    "terminal.external.windowsExec": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.22.12111.0_x64__8wekyb3d8bbwe\\wt.exe"
+    ]
+
 }
