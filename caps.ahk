@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 ; 禁用 CapsLock 键的默认大小写切换功能
-*CapsLock::Return
+*CapsLock:: return
 
 CapsLock & h:: Send "{Left}"
 CapsLock & j:: Send "{Down}"
@@ -131,4 +131,14 @@ CapsLock & m::
     DllCall("Shell32\SHAppBarMessage", "UInt", ABM_SETSTATE, "Ptr", APPBARDATA)
 }
 
-^++BS::FileRecycleEmpty()
+CapsLock & b::
+{
+    if WinExist("ahk_exe Taskmgr.exe")
+        WinActivate "ahk_exe Taskmgr.exe"
+    else
+        Run "Taskmgr.exe"
+    WinWait "ahk_exe Taskmgr.exe"
+    WinActivate "ahk_exe Taskmgr.exe"
+}
+
+^++BS:: FileRecycleEmpty()
